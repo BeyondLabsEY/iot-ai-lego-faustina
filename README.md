@@ -1,5 +1,7 @@
 # IOT AI Lego Boost Faustina
 
+![](faustina.jpeg)
+
 A equipe de engenharia do Wavespace elaborou uma prova de conceito de um robô assistente com Inteligência Artificial para controlar movimentos e ações do Lego Boost.
 O robô que desenvolvemos se chama Faustina, pois durante o seu processo de desenvolvimento ela já interrompeu várias vezes os seus criadores enquanto eles estavam falando.
 
