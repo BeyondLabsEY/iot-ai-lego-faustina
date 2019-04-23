@@ -1,0 +1,34 @@
+{
+    "data": {
+        "lookups": [
+            "trait"
+        ],
+        "name": "sentido",
+        "lang": "pt",
+        "id": "sentido",
+        "doc": "User-defined entity",
+        "builtin": false,
+        "values": [
+            {
+                "value": "volta",
+                "expressions": []
+            },
+            {
+                "value": "tras",
+                "expressions": []
+            },
+            {
+                "value": "frente",
+                "expressions": []
+            },
+            {
+                "value": "esquerda",
+                "expressions": []
+            },
+            {
+                "value": "direita",
+                "expressions": []
+            }
+        ]
+    }
+}

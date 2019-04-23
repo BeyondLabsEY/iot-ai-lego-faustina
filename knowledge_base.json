@@ -1,0 +1,12 @@
+{    "answers": [
+        {"intent" : "movimento", "entity": "frente", "legoAction": "forward", "text": "Movimentando-se para a frente" },
+        {"intent" : "movimento", "entity": "tras", "legoAction": "back", "text": "Movimentando-se para trás" },
+        {"intent" : "movimento", "entity": "direita", "legoAction": "right", "text": "Movimentando-se para a direita" },
+        {"intent" : "movimento", "entity": "esquerda", "legoAction": "left", "text": "Movimentando-se para a esquerda" },
+        {"intent" : "saudacao", "entity": "", "legoAction": "", "text": "Olá, bem-vindo ao centro de inovação da I UAI. Em que posso ajudar?" },
+	{"intent" : "sobre_voce", "entity": "", "legoAction": "", "text": "Sou a Faustina, uma robô criada pelo time de engeharia do centro de inovação da I UAI"},	
+	{"intent" : "sobre_blockchain", "entity": "", "legoAction": "", "text": "Bloque chein é um banco de dados descentralizado, distribuído, imutável e transparente. É um livro razão digital onde todo mundo tem uma cópia e participa como um nó da rede, não existindo uma entidade centralizadora. Ou seja, é uma tecnologia com o potencial de aumentar a transparência nos processos. Aqui no ueivispeisse temos algumas demos sobre bloque chein para a simulação de votação, controle de assets e o case de supply tchein. Para conhecer um pouco mais sobre os nossos projetos, entre em contato com o nosso time de engenharia"},
+        {"intent" : "sobre_ia", "entity": "", "legoAction": "", "text": "Inteligência Artificial é o campo da ciência da computação, que estuda a criação de agentes inteligentes, que são entidades capazes de perceber o seu meio e tomar decisões com base nas suas observações. Aqui no ueivespeisse temos demos de IA focando em processamento de linguagem natural e detecção facial."},
+        {"intent" : "sobre_xr ", "entity": "", "legoAction": "", "text": "XR é um termo que engloba realidade virtual, mista e aumentada. Aqui no ueivespeisse estudamos o tema e temos alguns dos equipamentos mais modernos, fale com o nosso time de engenharia para saber mais detalhes"}
+    ]
+}

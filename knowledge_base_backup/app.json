@@ -1,0 +1,10 @@
+{
+    "version": 20160513,
+    "zip-command": "zip ey-bot.zip ey-bot\/app.json ey-bot\/entities\/*.json ey-bot\/expressions\/*.json",
+    "data": {
+        "name": "ey-bot",
+        "description": "",
+        "lang": "pt",
+        "timezone": "America\/Los_Angeles"
+    }
+}

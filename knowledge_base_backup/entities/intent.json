@@ -1,0 +1,48 @@
+{
+    "data": {
+        "lookups": [
+            "trait"
+        ],
+        "name": "intent",
+        "lang": "pt",
+        "id": "intent",
+        "doc": "User-defined entity",
+        "builtin": false,
+        "values": [
+            {
+                "value": "sobre_impressao_3d",
+                "expressions": []
+            },
+            {
+                "value": "sobre_xr",
+                "expressions": []
+            },
+            {
+                "value": "sobre_ia",
+                "expressions": []
+            },
+            {
+                "value": "sobre_blockchain",
+                "expressions": []
+            },
+            {
+                "value": "sobre_iot",
+                "expressions": []
+            },
+            {
+                "value": "sobre_voce",
+                "expressions": []
+            },
+            {
+                "value": "saudacao",
+                "expressions": []
+            },
+            {
+                "value": "movimento",
+                "expressions": [
+                    "movimento"
+                ]
+            }
+        ]
+    }
+}
