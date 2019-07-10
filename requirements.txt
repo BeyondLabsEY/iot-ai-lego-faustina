@@ -53,7 +53,6 @@ ptyprocess==0.6.0
 pyasn1==0.1.9
 PyAudio==0.2.11
 pycparser==2.19
-pycrypto==2.6.1
 pygame==1.9.3
 pygatt==3.2.0
 Pygments==2.2.0
