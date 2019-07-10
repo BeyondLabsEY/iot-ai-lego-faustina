@@ -1,15 +1,15 @@
 # IOT AI Lego Boost Faustina
 
-![](faustina.jpeg)
+Nós da equipe de engenharia do [Wavespace](https://www.ey.com/br/pt/about-us/ey-wavespace-brasil), elaboramos uma prova de conceito de um robô assistente com Inteligência Artificial para controlar movimentos e ações do [Lego Boost](https://www.lego.com/pt-br/themes/boost).
 
-A equipe de engenharia do Wavespace elaborou uma prova de conceito de um robô assistente com Inteligência Artificial para controlar movimentos e ações do Lego Boost.
-O robô que desenvolvemos se chama Faustina, pois durante o seu processo de desenvolvimento ela já interrompeu várias vezes os seus criadores enquanto eles estavam falando.
+O robô que desenvolvemos se chama `Faustina`, pois durante o seu processo de desenvolvimento ela já interrompeu várias vezes os seus criadores, enquanto eles estavam falando.
+
 
 ![](faustao.gif)
 
 ## Setup do robô
 
-Nessa prova de conceito, utilizamos um kit Lego Boost conectado via bluetooth a um Raspberry Pi model 3.
+Nessa prova de conceito, utilizamos um kit `Lego Boost` conectado via Bluetooth a um `Raspberry Pi model 3`.
 Conectados ao Raspberry, colocamos uma caixa de som (entrada P2) e um microfone (entrada USB).
 
 ## Script
@@ -58,7 +58,7 @@ $ pip install https://github.com/undera/pylgbst/archive/0.10.tar.gz
 
 _Configuração do Wit.ai_
 
-Para a parte de Natural Language Understanding (NLU) da Faustina, estamos usando a biblioteca Wit.ai, desenvolvida pelo Facebook.
+Para a parte de `Natural Language Understanding (NLU)` da Faustina, estamos usando a biblioteca Wit.ai, desenvolvida pelo Facebook.
 Acesse https://wit.ai, crie uma conta e um app a partir da pasta knowledge_base_backup, contida na raíz do projeto.
 No final do processo de criação do app, será gerado um access token. Copie e cole-o no arquivo wit_client.py, no diretório raíz do projeto.
 
@@ -72,8 +72,9 @@ Execute
 $ python main.py
 ```
 
-Em ambientes onde existem mais de uma vesão do Python, utilize os atalhos apropriados, por exemplo `pip3` e `python3`.
+Em ambientes onde existem mais de uma versão do Python, utilize os atalhos apropriados, por exemplo `pip3` e `python3`.
 
+Para que seu script execute automaticamente no boot do Raspberry, sugerimos que siga o passo a passo indicado [nesse artigo](https://www.dexterindustries.com/howto/run-a-program-on-your-raspberry-pi-at-startup/)
 
 ## Como interagir com a Faustina?
 
@@ -82,11 +83,11 @@ Para realizar perguntas a Faustina, espere que a luz verde seja exibida em seu v
 
 ## Arquivos de voz e como evitar o delay na resposta
 
-Para reduzir o delay entre uma pergunta realizada pelo usuário e a resposta em voz da faustina, criamos um mecanismo de cache de áudio, em que gravamos um arquivo por assunto que está cadastrado na base de conhecimento. Esses arquivos podem ser encontrados na pasta recordings, na raíz do projeto.
+Para reduzir o delay entre uma pergunta realizada pelo usuário e a resposta em voz da faustina, criamos um mecanismo de cache de áudio, em que gravamos um arquivo por assunto que está cadastrado na base de conhecimento. Esses arquivos podem ser encontrados na pasta `recordings`, na raíz do projeto.
 
 ## Manutenção da base de conhecimento
 
-O cadastro de novas intenções e entidades deve ser realizado no seu app do Wit.ai. Caso queira alterar algum texto da resposta, dirija-se ao arquivo knowledge_base.json.
+O cadastro de novas intenções e entidades deve ser realizado no seu app do Wit.ai. Caso queira alterar algum texto da resposta, dirija-se ao arquivo `knowledge_base.json`.
 Após a alteração da base de conhecimento ou da resposta, apague os arquivos da pasta recordings, pois isso forçará o serviço de TTS a gerar um novo áudio, já considerando a alteração feita.
 
 
@@ -104,5 +105,15 @@ Após a alteração da base de conhecimento ou da resposta, apague os arquivos d
 ## Evoluções futuras
 
 Em evoluções futuras, queremos que a Faustina seja capaz de realizar movimentos mais complexos e interagir com uma gama maior de dispositivos. Por exemplo, podemos acoplar uma webcam no Raspberry para realizar deteção facial e lembrar o nome da pessoa com quem a Faustina está falando.
+
 Além disso, é oportuno melhorar o mecanismo de corte do áudio (hoje realizamos o corte a cada 5s). No futuro, podemos identificar o momento exato que o usuário parou de falar e realizar o corte do áudio. Podemos também testar outras ferramentas de NLU, TTS e STT visando fazer um benchmarking de assertividade das respostas.
+
+## Referências
+
+1. [Wavespace - EY](https://www.ey.com/br/pt/about-us/ey-wavespace-brasil)
+2. [Lego Boost](https://www.lego.com/pt-br/themes/boost)
+3. [Raspberry Pi Model 3](https://www.raspberrypi.org/products/raspberry-pi-3-model-b/)
+4. [Wit.ai](https://wit.ai/)
+5. [Lib do Python utilizada para interagir com o Lego Boost](https://github.com/undera/pylgbst)
+
 

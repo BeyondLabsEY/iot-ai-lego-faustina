@@ -17,6 +17,7 @@ import wave
 import contextlib
 from scipy.io.wavfile import read
 from datetime import datetime
+import random
 
 
 def play_wave_file(file_name):
@@ -39,19 +40,29 @@ def get_answer(response):
     intents, entities = [], []
     for k, v in response["entities"].items():
         if k == "intent":
-            print(v)
+            print("Intent:", str(v))
             intents.append(v[0]["value"])
         else:
-            print(v)
-            entities.append(v[0]["value"])
+            print("Entities:", str(v))
+            if "suggested" not in list(v[0].keys()):
+                entities.append(v[0]["value"])
+            else:
+                print("Ignoring entity suggestion...")
 
     intent = intents[0] if len(intents) > 0 else ""
     entity = entities[0] if len(entities) > 0 else ""
 
+    answer_found = False
     for answer_object in knowledge_base["answers"]:
         if answer_object["intent"] == intent and answer_object["entity"] == entity:
             print("Answer found:", str(answer_object))
             answer = answer_object
+            answer_found = True
+
+    if not answer_found:
+        print("Answer not found for intent \"{}\" and entities \"{}\"".format(
+            intent, str(entities)))
+
     return answer
 
 
@@ -66,11 +77,16 @@ def act(answer={}, hub={}, recording_seconds_size=0):
     elif answer["legoAction"] == "back":
         hub.motor_AB.timed(2, -0.8, -0.8)
     elif answer["legoAction"] == "headRight":
-        hub.motor_external.timed(1.5, -0.1, -0.1)
+        #hub.motor_external.timed(1.5, -0.1, -0.1)
+        hub.motor_external.angled(40, 0.03)
+        hub.motor_external.angled(-40, 0.03)
     elif answer["legoAction"] == "headLeft":
-        hub.motor_external.timed(1.5, 0.1, 0.1)
+        #hub.motor_external.timed(1.5, 0.1, 0.1)
+        hub.motor_external.angled(-40, 0.03)
+        hub.motor_external.angled(40, 0.03)
     elif answer["legoAction"] == "headCentered":
-        hub.motor_external.angled(-61, 0.08)
+        # hub.motor_external.angled(-61, 0.0
+        hub.motor_external.angled(0, 0.08)
     elif answer["legoAction"] == "colorRed":
         hub.led.set_color(COLOR_RED)
     elif answer["legoAction"] == "colorBlack":
@@ -93,6 +109,9 @@ def act(answer={}, hub={}, recording_seconds_size=0):
         hub.led.set_color(COLOR_WHITE)
     elif answer["legoAction"] == "colorYellow":
         hub.led.set_color(COLOR_YELLOW)
+    elif answer["legoAction"] == "faustaoErrou":
+        print("Playing errou...")
+        play_wave_file("errou.wav")
 
 
 def shake_head(hub, recording_seconds_size):
@@ -173,7 +192,7 @@ def download_voice(text, answer):
         file_name = answer["intent"] + "_" + answer["entity"] + ".mp3"
         audio_files = glob.glob("*")
         print("Audio files:", str(audio_files))
-        if file_name not in audio_files:
+        if file_name not in audio_files or answer["legoAction"] == "alwaysDownload":
             print("baixando arquivo de áudio...")
             query_text_to_speech(text, file_name)
     else:
@@ -204,6 +223,23 @@ def speech(text, hub, answer):
     t1.join()  # Waits until t2 ends
 
 
+def add_information_to_text(answer):
+    """Adds extra information to response text"""
+    text = answer["text"]
+
+    if answer["intent"] == "sorteio":
+        months_names = {1: "Janeiro", 2: "Fevereiro",
+                        3: "Março", 4: "Abril", 5: "Maio", 6: "Junho", 7: "Julho", 8: "Agosto", 9: "Setembro", 10: "Outubro", 11: "Novembro", 12: "Dezembro"}
+        month_number = random.randrange(1, 12)
+        text = text.replace("monthName", months_names[month_number])
+
+    elif answer["intent"] == "empate":
+        day_number = random.randrange(1, 31)
+        text = text.replace("dayNumber", str(day_number))
+
+    return text
+
+
 def main():
     """Integrates all the code"""
 
@@ -216,7 +252,7 @@ def main():
     # If hub works, starts the main app flow
     if hub:
         speech(
-            "Olá, bem-vindo ao centro de inovação da I UAI. Em que posso te ajudar?", hub, {})
+            "Olá. Eu sou a Faustina, uma robô assistente do ueivespeisse. Em que posso ajudar?", hub, {})
         while True:
             try:
                 act({"legoAction": "colorGreen"}, hub)
@@ -228,10 +264,12 @@ def main():
                 wit_response = wit_client.get_response(recorded_file)
 
                 if wit_response["_text"]:
-                    #act({"legoAction": "colorRed"}, hub)
                     print(wit_response)
                     answer = get_answer(wit_response)
-                    text = answer["text"] if answer else "Desculpa, nao entendi o que voce quis dizer"
+
+                    text = add_information_to_text(
+                        answer) if answer else "Desculpa, nao entendi o que voce quis dizer"
+
                     speech(text, hub, answer)
                     if answer:
                         act(answer, hub)
