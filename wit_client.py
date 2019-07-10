@@ -2,7 +2,7 @@ from wit import Wit
 
 
 def get_response(speech_file):
-    access_token = "VIRTA7ULHPIAP64SJY6DX7WL6R63VROK"
+    access_token = "<access_token>"
     client = Wit(access_token)
     resp = None
     with open(speech_file, 'rb') as f:
