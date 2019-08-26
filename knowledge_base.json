@@ -1,16 +1,28 @@
 {
   "answers": [
     {
+      "intent": "Greetings",
+      "entity": "",
+      "legoAction": "",
+      "text": "Hola! Mi nombre es Didi, estoy aquí para explicarte nuevas tecnologías."
+    },
+    {
       "intent": "RPA",
       "entity": "",
       "legoAction": "",
-      "text": "La automatización de procesos repetitivos, permite replicar las acciones repetitivas que no requieren ningún esfuerzo de pensamiento y automatizarlas para hacer más eficiente los procesos de la organización"
+      "text": "La automatización de procesos permite replicar las acciones repetitivas y automatizarlas para hacer más eficiente los procesos de la organización."
     },
     {
       "intent": "Blockchain",
       "entity": "",
       "legoAction": "",
-      "text": "La automatización de procesos repetitivos, permite replicar las acciones repetitivas que no requieren ningún esfuerzo de pensamiento y automatizarlas para hacer más eficiente los procesos de la organización"
+      "text": "Blokchein es un conjunto de datos que permite generar contratos virtuales sin intermediarios a través de la nube para dar trazabilidad, confianza y certificación."
+    },
+    {
+      "intent": "Analytics",
+      "entity": "",
+      "legoAction": "",
+      "text": "La analítica avanzada es el uso de datos para poder tomar mejores decisiones de negocios en base a información concreta."
     }
   ]
 }
