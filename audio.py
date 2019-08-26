@@ -1,6 +1,18 @@
 import pyaudio
 import wave
+from subprocess import call, check_output, TimeoutExpired
 
+def record():
+    #call(["ffplay", "-nodisp", "-autoexit", "recordings/{}".format(file_name)])
+    WAVE_OUTPUT_FILENAME = "file.wav"
+    
+    try:
+        call(["arecord", "--device=hw:1,0", "--format", "S16_LE", "--rate", "16000", "-c1", "file.wav"], timeout=5)
+    except TimeoutExpired as exc:    
+        return WAVE_OUTPUT_FILENAME
+    return "" 
+
+'''
 def record():
     FORMAT = pyaudio.paInt16
     CHANNELS = 1
@@ -36,3 +48,4 @@ def record():
     waveFile.close()
 
     return WAVE_OUTPUT_FILENAME
+'''

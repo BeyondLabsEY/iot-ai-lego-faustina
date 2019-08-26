@@ -1,112 +1,16 @@
 {
   "answers": [
     {
-      "intent": "movimento",
-      "entity": "frente",
-      "legoAction": "forward",
-      "text": "Movimentando-se para a frente"
-    },
-    {
-      "intent": "movimento",
-      "entity": "trás",
-      "legoAction": "back",
-      "text": "Movimentando-se para trás"
-    },
-    {
-      "intent": "movimento",
-      "entity": "direita",
-      "legoAction": "right",
-      "text": "Movimentando-se para a direita"
-    },
-    {
-      "intent": "movimento",
-      "entity": "esquerda",
-      "legoAction": "left",
-      "text": "Movimentando-se para a esquerda"
-    },
-    {
-      "intent": "saudacao",
+      "intent": "RPA",
       "entity": "",
       "legoAction": "",
-      "text": "Olá. Eu sou a Faustina, uma robô assistente do ueivespeisse. Em que posso ajudar?"
+      "text": "La automatización de procesos repetitivos, permite replicar las acciones repetitivas que no requieren ningún esfuerzo de pensamiento y automatizarlas para hacer más eficiente los procesos de la organización"
     },
     {
-      "intent": "sobre_blockchain",
+      "intent": "Blockchain",
       "entity": "",
       "legoAction": "",
-      "text": "Bloque chein é um banco de dados descentralizado, distribuído, imutável e transparente. É um livro razão digital onde todo mundo tem uma cópia e participa como um nó da rede, não existindo uma entidade centralizadora. Ou seja, é uma tecnologia com o potencial de aumentar a transparência nos processos. Aqui no ueivispeisse temos algumas demos sobre bloque chein para a simulação de votação, controle de assets e o case de supply tchein. Para conhecer um pouco mais sobre os nossos projetos, entre em contato com o nosso time de engenharia"
-    },
-    {
-      "intent": "sobre_ia",
-      "entity": "",
-      "legoAction": "",
-      "text": "Inteligência Artificial é o campo da ciência da computação, que estuda a criação de agentes inteligentes, que são entidades capazes de perceber o seu meio e tomar decisões com base nas suas observações. Aqui no ueivespeisse temos demos de I A focando em processamento de linguagem natural e detecção facial."
-    },
-    {
-      "intent": "sobre_xr",
-      "entity": "",
-      "legoAction": "",
-      "text": "XR é um termo que engloba realidade virtual, mista e aumentada. Aqui no ueivespeisse estudamos o tema e temos alguns dos equipamentos mais modernos, fale com o nosso time de engenharia para saber mais detalhes"
-    },
-    {
-      "intent": "sobre_ux",
-      "entity": "",
-      "legoAction": "",
-      "text": "Experiência do usuário ou UX é o conjunto de elementos e fatores relativos à interação do usuário com um determinado produto, sistema ou serviço cujo resultado gera uma percepção positiva ou negativa"
-    },
-    {
-      "intent": "maquinas_substituirao",
-      "entity": "",
-      "legoAction": "",
-      "text": "Sim e não. Para os trabalhos que os humanos fazem, mas não deveriam, fique tranquilo, nós vamos fazer: vocês não irão mais perder tempo com eles. Esse tempo que sobrar vocês podem usar para serem mais humanos!"
-    },
-    {
-      "intent": "sobre_wavespace",
-      "entity": "",
-      "legoAction": "",
-      "text": "O ueivespeisse é um espaço próprio para a prática de atividades relacionadas à cultura da inovação. No ueivespeisse, estudamos tecnologias de ponta e desenvolvemos soluções de alto valor para nossos clientes. Também realizamos eventos e workshops para gerar novas ideias e promover a transformação digital."
-    },
-    {
-      "intent": "sobre_iot",
-      "entity": "",
-      "legoAction": "",
-      "text": "Internet das Coisas é o modo como os objetos físicos estão conectados e se comunicando entre si e com o usuário, através de sensores inteligentes e softwares que transmitem dados para uma rede. Como se fosse um grande sistema nervoso que possibilita a troca de informações entre dois ou mais pontos. No ueivespeisse, temos demos de internet das coisas para a monitoramento de agricultura, qualidade do ar e da água."
-    },
-    {
-      "intent": "tecnologias_wavespace",
-      "entity": "",
-      "legoAction": "",
-      "text": "Trabalhamos com várias tecnologias. Criamos soluções envolvendo inteligência artificial, bloque chein, internet das coisas e experiência do usuário. Eu sou uma tecnologia que eles trabalharam"
-    },
-    {
-      "intent": "porque_faustina",
-      "entity": "",
-      "legoAction": "faustaoErrou",
-      "text": "As vezes eu interrompo os outros sem querer, igual a um apresentador famoso de televisão, por isso o nome"
-    },
-    {
-      "intent": "sorteio",
-      "entity": "",
-      "legoAction": "alwaysDownload",
-      "text": "Quem de vocês nasceu em monthName?"
-    },
-    {
-      "intent": "empate",
-      "entity": "",
-      "legoAction": "alwaysDownload",
-      "text": "E quem nasceu no dia dayNumber desse mês ou perto disso?"
-    },
-    {
-      "intent": "despedida",
-      "entity": "",
-      "legoAction": "",
-      "text": "Até mais... Foi um prazer falar com você."
-    },
-    {
-      "intent": "trampe",
-      "entity": "",
-      "legoAction": "",
-      "text": "Estou trampando, desculpa por existir"
+      "text": "La automatización de procesos repetitivos, permite replicar las acciones repetitivas que no requieren ningún esfuerzo de pensamiento y automatizarlas para hacer más eficiente los procesos de la organización"
     }
   ]
 }

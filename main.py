@@ -5,7 +5,7 @@ from gtts import gTTS
 from io import BytesIO
 from subprocess import call, check_output
 import time
-from pylgbst.movehub import MoveHub, EncodedMotor, COLORS, COLOR_NONE, COLOR_RED, COLOR_BLACK, COLOR_PINK, \
+from pylgbst.hub import MoveHub, EncodedMotor, COLORS, COLOR_NONE, COLOR_RED, COLOR_BLACK, COLOR_PINK, \
     COLOR_PURPLE, COLOR_BLUE, COLOR_LIGHTBLUE, COLOR_CYAN, COLOR_GREEN, COLOR_WHITE, COLOR_YELLOW
 import os
 from subprocess import Popen
@@ -176,7 +176,7 @@ def get_recording_size(file_name):
 def query_text_to_speech(text, file_name):
     """Queries TTS service"""
     mp3_fp = BytesIO()
-    tts = gTTS(text, 'pt-br')
+    tts = gTTS(text, 'es')
     tts.save(file_name)
     tts.write_to_fp(mp3_fp)
 
@@ -252,7 +252,7 @@ def main():
     # If hub works, starts the main app flow
     if hub:
         speech(
-            "Olá. Eu sou a Faustina, uma robô assistente do ueivespeisse. Em que posso ajudar?", hub, {})
+            "Hola, mi nombre es Didi. Estoy aqui para ayudarte", hub, {})
         while True:
             try:
                 act({"legoAction": "colorGreen"}, hub)
@@ -268,7 +268,7 @@ def main():
                     answer = get_answer(wit_response)
 
                     text = add_information_to_text(
-                        answer) if answer else "Desculpa, nao entendi o que voce quis dizer"
+                        answer) if answer else "Disculpa, no entendí lo que quisiste decir"
 
                     speech(text, hub, answer)
                     if answer:
