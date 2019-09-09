@@ -5,7 +5,7 @@ from gtts import gTTS
 from io import BytesIO
 from subprocess import call, check_output
 import time
-from pylgbst.hub import MoveHub, EncodedMotor, COLORS, COLOR_NONE, COLOR_RED, COLOR_BLACK, COLOR_PINK, \
+from pylgbst.movehub import MoveHub, EncodedMotor, COLORS, COLOR_NONE, COLOR_RED, COLOR_BLACK, COLOR_PINK, \
     COLOR_PURPLE, COLOR_BLUE, COLOR_LIGHTBLUE, COLOR_CYAN, COLOR_GREEN, COLOR_WHITE, COLOR_YELLOW
 import os
 from subprocess import Popen
